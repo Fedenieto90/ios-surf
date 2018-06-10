@@ -26,7 +26,20 @@ class SpotsVC: UIViewController {
         
         //Add refresh control
         refreshControl.addTarget(self, action: #selector(getActualSpotsForecast), for: UIControlEvents.valueChanged)
-        self.tableView.addSubview(refreshControl)
+        self.tableView.refreshControl = refreshControl
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Set Large Title
+        setLargeTitle()
+    }
+    
+    func setLargeTitle() {
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

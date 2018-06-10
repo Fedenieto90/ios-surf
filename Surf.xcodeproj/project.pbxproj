@@ -159,6 +159,13 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		8B28C35C1FCE396700ACC93F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8B7550C81FBFA0390082CCA8 = {
 			isa = PBXGroup;
 			children = (
@@ -185,8 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				8B7550D41FBFA0390082CCA8 /* AppDelegate.swift */,
-				8B207D1F1FC1352B00484118 /* Resources */,
 				8B7551051FBFA1280082CCA8 /* API */,
+				8B28C35C1FCE396700ACC93F /* Extensions */,
+				8B207D1F1FC1352B00484118 /* Resources */,
 				8B7551081FBFA4C30082CCA8 /* Models */,
 				8B75511B1FC073040082CCA8 /* Managers */,
 				8B7551021FBFA0450082CCA8 /* ViewControllers */,

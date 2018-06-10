@@ -29,6 +29,18 @@ class SpotDetailVC: UIViewController {
         futureForecasts = SpotManager.shared.futureForecast(forecasts: self.spot.forecast)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Set Small Title
+        setSmallTitle()
+    }
+    
+    func setSmallTitle() {
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = false
+        }
+    }
+    
     func initMap() {
         let annotation = MKPointAnnotation()
         let centerCoordinate = CLLocationCoordinate2D(latitude: spot.location.latitude, longitude: spot.location.longitude)
@@ -36,6 +48,9 @@ class SpotDetailVC: UIViewController {
         annotation.title = spot.name
         mapView.addAnnotation(annotation)
         mapView.showAnnotations([annotation], animated: true)
+        self.mapView.isZoomEnabled = false
+        self.mapView.isScrollEnabled = false
+        self.mapView.isUserInteractionEnabled = false
     }
 
 }
